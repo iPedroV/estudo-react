@@ -1,0 +1,12 @@
+//Criar projeto React na mesma pasta
+npx create-react-app .
+
+
+//executar o projeto
+npm start
+
+//instalar a node modules
+npm i ou install
+
+//instalando pacotes
+npm install react-bootstrap bootstrap@5.1.3
