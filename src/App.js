@@ -26,12 +26,12 @@ function App() {
           <Route path="/carros" element={<Carros/>}></Route>
           <Route path="/array" element={<Array/>}></Route>
           <Route path="/objeto" element={<Objeto/>}></Route>
-          
+
         </Routes>
       </BrowserRouter>
 
 
-      
+      {/* */}
 
 
       {/*     
