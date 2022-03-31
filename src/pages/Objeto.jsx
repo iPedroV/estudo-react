@@ -36,14 +36,14 @@ const Objeto = () => {
 
             <Col  >
               <Card >
-                <Card.Img variant="top" src={item.foto} />
+                <Card.Img height={170.89} variant="top" src={item.foto} />
                 <Card.Body>
                   <Card.Title>{item.marca} - {item.modelo}</Card.Title>
                   <Card.Text>
-                    <strong>Cor:</strong>{item.cor}
+                    <strong>Cor: </strong>{item.cor}
                   </Card.Text>
                   <Card.Text>
-                    <strong>Ano:</strong>{item.ano}
+                    <strong>Ano: </strong>{item.ano}
                   </Card.Text>
                   <Button variant="danger">Mais detalhes</Button>
                 </Card.Body>
