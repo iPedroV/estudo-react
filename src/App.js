@@ -9,6 +9,7 @@ import Array from './pages/Array';
 import Carros from './pages/Carros';
 import Objeto from './pages/Objeto';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 
 
@@ -21,6 +22,7 @@ function App() {
 
       <BrowserRouter>
         <Menu />
+        <Container>
         <Routes>
           <Route path="/" element={<Carros/>}></Route> {/* Posso fechar das duas formas */} 
           <Route path="/carros" element={<Carros/>}></Route>
@@ -28,6 +30,7 @@ function App() {
           <Route path="/objeto" element={<Objeto/>}></Route>
 
         </Routes>
+        </Container>
       </BrowserRouter>
 
 
