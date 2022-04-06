@@ -8,8 +8,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Array from './pages/Array';
 import Carros from './pages/Carros';
 import Objeto from './pages/Objeto';
+import Contador from './pages/Contador';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import FilmesPopulares from './pages/filmes/FilmesPopulares';
 
 
 
@@ -28,6 +30,8 @@ function App() {
           <Route path="/carros" element={<Carros/>}></Route>
           <Route path="/array" element={<Array/>}></Route>
           <Route path="/objeto" element={<Objeto/>}></Route>
+          <Route path="/contador" element={<Contador/>}></Route>
+          <Route path="/filmes/populares" element={<FilmesPopulares/>}></Route>
 
         </Routes>
         </Container>
