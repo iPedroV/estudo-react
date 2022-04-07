@@ -12,6 +12,7 @@ import Contador from './pages/Contador';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import FilmesPopulares from './pages/filmes/FilmesPopulares';
+import FilmesDetalhes from './pages/filmes/FilmesDetalhes';
 
 
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/objeto" element={<Objeto/>}></Route>
           <Route path="/contador" element={<Contador/>}></Route>
           <Route path="/filmes/populares" element={<FilmesPopulares/>}></Route>
+          <Route path="/filmes/:id" element={<FilmesDetalhes/>}></Route>
 
         </Routes>
         </Container>
