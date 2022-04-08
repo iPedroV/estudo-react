@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import {  Card, Col, Row } from 'react-bootstrap'
+import { Card, Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import apiFilmes from '../../services/apiFilmes'
 
-
-const FilmesPopulares = () => {
+const FilmesCartaz = () => {
 
     const [filmes, setFilmes] = useState([])
 
     useEffect(() => {
 
-        apiFilmes.get('movie/popular?language=pt-BR').then(resultado => {
+        apiFilmes.get('movie/now_playing?language=pt-BR').then(resultado => {
             setFilmes(resultado.data.results)
         })
 
     }, [])
-    //o primeiro parâmetro é uma função anônima, dentro das chaves é o corpo da função. No array, é aonde eu vou botar variáveis, toda vez que eu mudar o valor delas, eu chamo a função
 
-    return (
-        <div>
-            <h1>Filmes Populares</h1>
+  return (
+    <div>
+            <h1>Em Cartaz</h1>
 
             <Row>
                 {filmes.map(item => (
@@ -43,7 +41,7 @@ const FilmesPopulares = () => {
             </Row>
 
         </div>
-    )
+  )
 }
 
-export default FilmesPopulares
+export default FilmesCartaz

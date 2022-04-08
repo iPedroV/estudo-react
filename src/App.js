@@ -13,13 +13,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import FilmesPopulares from './pages/filmes/FilmesPopulares';
 import FilmesDetalhes from './pages/filmes/FilmesDetalhes';
+import UltimoFilmeAdd from './pages/filmes/UltimoFilmeAdd';
+import FilmesLancamentos from './pages/filmes/FilmesLancamentos';
+import FilmesCartaz from './pages/filmes/FilmesCartaz';
 
 
 
 
 function App() {
   return (
-    <div >
+    <div className="fundo">
 
       
 
@@ -33,12 +36,15 @@ function App() {
           <Route path="/objeto" element={<Objeto/>}></Route>
           <Route path="/contador" element={<Contador/>}></Route>
           <Route path="/filmes/populares" element={<FilmesPopulares/>}></Route>
+          <Route path="/filmes/lancamentos" element={<FilmesLancamentos/>}></Route>
+          <Route path="/filmes/cartaz" element={<FilmesCartaz/>}></Route>
+          <Route path="/filmes/ultimoAdicionado" element={<UltimoFilmeAdd/>}></Route>
           <Route path="/filmes/:id" element={<FilmesDetalhes/>}></Route>
 
         </Routes>
         </Container>
       </BrowserRouter>
-
+      
 
       {/* */}
 
