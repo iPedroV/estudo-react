@@ -21,7 +21,7 @@ const FilmesLancamentos = () => {
 
             <Row>
                 {filmes.map(item => (
-                    <Col md={3} className="mb-3">
+                    <Col key={item.id} md={3} className="mb-3"> {/* key para tirar o erro do console de keys */}
                         <Card title={item.title}> {/* da pra ver o titulo passando o mouse em cima */}
                             
                             <Card.Img className="hover-zoom" variant="top" src={'https://image.tmdb.org/t/p/w500/'+ item.poster_path } />

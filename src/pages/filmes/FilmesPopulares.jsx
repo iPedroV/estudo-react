@@ -20,7 +20,7 @@ const FilmesPopulares = () => {
     return (
         <div>
             <h1>Filmes Populares</h1>
-
+            {filmes.lenght === 0 && <h1>Carregando...</h1>} {/* para mais, só colocar outro && //pode ser tb !filmes.lenght */}
             <Row>
                 {filmes.map(item => (
                     <Col md={3} className="mb-3">

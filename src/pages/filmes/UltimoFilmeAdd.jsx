@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Card, Col, Row } from 'react-bootstrap'
-import { Link, useParams} from 'react-router-dom'
+import {  Col, Row } from 'react-bootstrap'
+
 import apiFilmes from '../../services/apiFilmes' //mega importante
 
 const UltimoFilmeAdd = () => {
@@ -16,7 +16,7 @@ const UltimoFilmeAdd = () => {
 
     }, [])
 
-    const params = useParams()
+    //const params = useParams()
 
     return (
         <div>
