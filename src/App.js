@@ -16,6 +16,7 @@ import FilmesDetalhes from './pages/filmes/FilmesDetalhes';
 import UltimoFilmeAdd from './pages/filmes/UltimoFilmeAdd';
 import FilmesLancamentos from './pages/filmes/FilmesLancamentos';
 import FilmesCartaz from './pages/filmes/FilmesCartaz';
+import AtoresDetalhes from './pages/atores/AtoresDetalhes';
 
 
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/filmes/cartaz" element={<FilmesCartaz/>}></Route>
           <Route path="/filmes/ultimoAdicionado" element={<UltimoFilmeAdd/>}></Route>
           <Route path="/filmes/:id" element={<FilmesDetalhes/>}></Route>
+          <Route path="/ator/:id" element={<AtoresDetalhes/>}></Route>
 
         </Routes>
         </Container>
