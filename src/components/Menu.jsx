@@ -28,7 +28,7 @@ const Menu = () => {
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Link className="nav-link" to="/ator">Ator detalhes</Link>
-                        
+                        <Link className="nav-link" to="/series/populares">Series</Link>
                         {/*<Link className="nav-link" to="/filmes/detalhes">Filmes Detalhes</Link>*/}
                     </Nav>
                 </Container>
