@@ -19,6 +19,7 @@ import FilmesCartaz from './pages/filmes/FilmesCartaz';
 import AtoresDetalhes from './pages/atores/AtoresDetalhes';
 import SeriesPopulares from './pages/series/SeriesPopulares';
 import SerieDetalhes from './pages/series/SerieDetalhes';
+import TemporadaDetalhes from './pages/series/TemporadaDetalhes copy';
 
 
 
@@ -45,6 +46,8 @@ function App() {
           <Route path="/filmes/:id" element={<FilmesDetalhes/>}></Route>
           <Route path="/series/:id" element={<SerieDetalhes/>}></Route>
           <Route path="/ator/:id" element={<AtoresDetalhes/>}></Route>
+          <Route path="/ator/:id" element={<AtoresDetalhes/>}></Route>
+          <Route path="/series/:id/temporada/:season_number" element={<TemporadaDetalhes/>}></Route>
           <Route path="/series/populares" element={<SeriesPopulares/>}></Route>
         </Routes>
         </Container>

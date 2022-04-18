@@ -65,7 +65,7 @@ const SerieDetalhes = () => {
                             <Col md={2}>
 
                                 <Card>
-                                    <Link className="btn " to={'/ator/' + item.id}>
+                                    <Link className="btn " to={'/series/' + serie.id + '/temporada/' + item.season_number }>
                                         <Card.Img title={item.name} variant="top" src={'https://image.tmdb.org/t/p/w500/' + item.poster_path} />
                                     </Link>
                                 </Card>
