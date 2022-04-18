@@ -20,6 +20,8 @@ import AtoresDetalhes from './pages/atores/AtoresDetalhes';
 import SeriesPopulares from './pages/series/SeriesPopulares';
 import SerieDetalhes from './pages/series/SerieDetalhes';
 import TemporadaDetalhes from './pages/series/TemporadaDetalhes copy';
+import SeriesNoAr from './pages/series/SeriesNoAr';
+import { SeriesEstrelando } from './pages/series/SeriesEstrelando';
 
 
 
@@ -49,6 +51,8 @@ function App() {
           <Route path="/ator/:id" element={<AtoresDetalhes/>}></Route>
           <Route path="/series/:id/temporada/:season_number" element={<TemporadaDetalhes/>}></Route>
           <Route path="/series/populares" element={<SeriesPopulares/>}></Route>
+          <Route path="/series/no-ar" element={<SeriesNoAr/>}></Route>
+          <Route path="/series/estrelando-hoje" element={<SeriesEstrelando/>}></Route>
         </Routes>
         </Container>
       </BrowserRouter>

@@ -27,8 +27,20 @@ const Menu = () => {
                                 <Link className="nav-link" to="/filmes/ultimoAdicionado">Último Cadastrado</Link>
                             </NavDropdown.Item>
                         </NavDropdown>
+                        
+                        <NavDropdown id="nav-dropdown-dark" title="Séries" menuVariant="dark">
+                            <NavDropdown.Item className="nav-link" >
+                                <Link className="nav-link" to="/series/populares">Populares</Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item className="nav-link" >
+                                <Link className="nav-link" to="/series/no-ar">No Ar</Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item className="nav-link" >
+                                <Link className="nav-link" to="/series/estrelando-hoje">Estrelando Hoje</Link>
+                            </NavDropdown.Item>
+                        </NavDropdown>
+                        
                         <Link className="nav-link" to="/ator">Ator detalhes</Link>
-                        <Link className="nav-link" to="/series/populares">Series</Link>
                         {/*<Link className="nav-link" to="/filmes/detalhes">Filmes Detalhes</Link>*/}
                     </Nav>
                 </Container>

@@ -44,11 +44,11 @@ const SerieDetalhes = () => {
                             </Card>
                         </Col>
                         <Col md={8}>
-                            <p><strong>Título Original: </strong>{serie.original_title}</p>
+                            <p><strong>Título Original: </strong>{serie.original_name}</p>
                             <p><strong>Popularidade: </strong>{serie.popularity}</p>
                             <p><strong>Data de Lançamento: </strong>{serie.release_date}</p>
                             <p><strong>Orçamento: </strong>{serie.budget}</p>
-                            <p><strong>Gênero:</strong>
+                            <p><strong>Gênero: </strong>
                                 {serie.genres.map(item => (
                                     <span>{item.name}, </span>
                                 ))}</p>
