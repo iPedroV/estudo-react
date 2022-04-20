@@ -22,6 +22,7 @@ import SerieDetalhes from './pages/series/SerieDetalhes';
 import TemporadaDetalhes from './pages/series/TemporadaDetalhes copy';
 import SeriesNoAr from './pages/series/SeriesNoAr';
 import { SeriesEstrelando } from './pages/series/SeriesEstrelando';
+import RickEpisodes  from './pages/desenho/RickEpisodes';
 
 
 
@@ -36,7 +37,8 @@ function App() {
         <Menu />
         <Container>
         <Routes>
-          <Route path="/" element={<Carros/>}></Route> {/* Posso fechar das duas formas */} 
+          <Route path="/" element={<RickEpisodes/>}></Route> {/* Posso fechar das duas formas */} 
+          <Route path="/personagens" element={<RickEpisodes/>}></Route> {/* Posso fechar das duas formas */} 
           <Route path="/carros" element={<Carros/>}></Route>
           <Route path="/array" element={<Array/>}></Route>
           <Route path="/objeto" element={<Objeto/>}></Route>
