@@ -1,4 +1,7 @@
-apaguei o E na chave
+apaguei o E na chave 
+imgflip api
+open trivia api mega legal
+thrones api https://thronesapi.com/api/v2/characters
 
 //Criar projeto React na mesma pasta
 npx create-react-app .

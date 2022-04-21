@@ -13,6 +13,8 @@ const Menu = () => {
                         <Link className="nav-link" to="/array">Array</Link>
                         <Link className="nav-link" to="/objeto">Objeto</Link>
                         <Link className="nav-link" to="/contador">Contador</Link>
+                        <Link className="nav-link" to="/disney/personagens">Disney</Link>
+                        <Link className="nav-link" to="/got">GOT</Link>
                         <NavDropdown id="nav-dropdown-dark" title="Filmes" menuVariant="dark">
                             <NavDropdown.Item className="nav-link" >
                                 <Link className="nav-link" to="/filmes/populares">Populares</Link>

@@ -23,6 +23,9 @@ import TemporadaDetalhes from './pages/series/TemporadaDetalhes copy';
 import SeriesNoAr from './pages/series/SeriesNoAr';
 import { SeriesEstrelando } from './pages/series/SeriesEstrelando';
 import RickEpisodes  from './pages/desenho/RickEpisodes';
+import TodosPersonagens  from './pages/disney/TodosPersonagens';
+import PersonagemDetalhes from './pages/disney/PersonagemDetalhes';
+import PersonagensGot from './pages/got/PersonagensGot';
 
 
 
@@ -43,6 +46,7 @@ function App() {
           <Route path="/array" element={<Array/>}></Route>
           <Route path="/objeto" element={<Objeto/>}></Route>
           <Route path="/contador" element={<Contador/>}></Route>
+          <Route path="/got" element={<PersonagensGot/>}></Route>
           <Route path="/filmes/populares" element={<FilmesPopulares/>}></Route>
           <Route path="/filmes/lancamentos" element={<FilmesLancamentos/>}></Route>
           <Route path="/filmes/cartaz" element={<FilmesCartaz/>}></Route>
@@ -55,6 +59,8 @@ function App() {
           <Route path="/series/populares" element={<SeriesPopulares/>}></Route>
           <Route path="/series/no-ar" element={<SeriesNoAr/>}></Route>
           <Route path="/series/estrelando-hoje" element={<SeriesEstrelando/>}></Route>
+          <Route path="/disney/personagens" element={<TodosPersonagens/>}></Route>
+          <Route path="/disney/personagens/:_id" element={<PersonagemDetalhes/>}></Route>
         </Routes>
         </Container>
       </BrowserRouter>
