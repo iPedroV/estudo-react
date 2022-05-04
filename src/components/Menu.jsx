@@ -1,11 +1,12 @@
 import React from 'react'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import '../index.css';
 
 const Menu = () => {
     return (
         <div>
-            <Navbar bg="dark" variant="dark" className="mb-3">
+            <Navbar variant="dark" className="mb-3">
                 <Container>
                     <Navbar.Brand href="#carros">Inicio</Navbar.Brand>
                     <Nav className="me-auto">

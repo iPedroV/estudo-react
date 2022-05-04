@@ -25,6 +25,10 @@ h1 {
   color: rgb(231, 213, 213);
 } */
 
+.navbar {
+  background-color: rgb(42, 43, 39);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
