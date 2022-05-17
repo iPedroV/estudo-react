@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Card, Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import apiFilmes from '../../services/apiFilmes'
+import apiProjeto from '../../services/apiProjeto'
 
 
 const FilmesPopulares = () => {
@@ -15,6 +16,9 @@ const FilmesPopulares = () => {
 
         apiFilmes.get('movie/popular?language=pt-BR').then(resultado => {
             setFilmes(resultado.data.results)
+        })
+        apiProjeto.get('/setores').then(resultado => {
+            console.log(resultado.data)
         })
 
 
