@@ -26,6 +26,17 @@ import RickEpisodes  from './pages/desenho/RickEpisodes';
 import TodosPersonagens  from './pages/disney/TodosPersonagens';
 import PersonagemDetalhes from './pages/disney/PersonagemDetalhes';
 import PersonagensGot from './pages/got/PersonagensGot';
+import InserirProfessor from './pages/academico/professor/InserirProfessor';
+import InserirDisciplina from './pages/academico/disciplina/InserirDisciplina';
+import InserirCurso from './pages/academico/curso/InserirCurso';
+import InserirAluno from './pages/academico/aluno/InserirAluno';
+import InserirSala from './pages/academico/sala/InserirSala';
+import InserirSemestre from './pages/academico/semestre/InserirSemestre';
+import ListaDisciplinas from './pages/academico/disciplina/ListaDisciplinas';
+import ListaAlunos from './pages/academico/aluno/ListaAlunos';
+import ListaProfessores from './pages/academico/professor/ListaProfessores';
+import ListaSala from './pages/academico/sala/ListaSala';
+import ListaSemestre from './pages/academico/semestre/ListaSemestre';
 
 
 
@@ -61,6 +72,17 @@ function App() {
           <Route path="/series/estrelando-hoje" element={<SeriesEstrelando/>}></Route>
           <Route path="/disney/personagens" element={<TodosPersonagens/>}></Route>
           <Route path="/disney/personagens/:_id" element={<PersonagemDetalhes/>}></Route>
+          <Route path="/academico/cadastrar-curso" element={<InserirCurso/>}></Route>
+          <Route path="/academico/cadastrar-disciplina" element={<InserirDisciplina/>}></Route>
+          <Route path="/academico/disciplinas" element={<ListaDisciplinas/>}></Route>
+          <Route path="/academico/cadastrar-professor" element={<InserirProfessor/>}></Route>
+          <Route path="/academico/professores" element={<ListaProfessores/>}></Route>
+          <Route path="/academico/cadastrar-aluno" element={<InserirAluno/>}></Route>
+          <Route path="/academico/alunos" element={<ListaAlunos/>}></Route>
+          <Route path="/academico/cadastrar-sala" element={<InserirSala/>}></Route>
+          <Route path="/academico/salas" element={<ListaSala/>}></Route>
+          <Route path="/academico/cadastrar-semestre" element={<InserirSemestre/>}></Route>
+          <Route path="/academico/semestres" element={<ListaSemestre/>}></Route>
         </Routes>
         </Container>
       </BrowserRouter>

@@ -42,6 +42,28 @@ const Menu = () => {
                                 <Link className="nav-link" to="/series/estrelando-hoje">Estrelando Hoje</Link>
                             </NavDropdown.Item>
                         </NavDropdown>
+
+                        <NavDropdown id="nav-dropdown-dark" title="Acadêmico" menuVariant="dark">
+                            <NavDropdown.Item className="nav-link" >
+                                <Link className="nav-link" to="/academico/cadastrar-curso">Cadastrar Curso</Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item className="nav-link" >
+                                <Link className="nav-link" to="/academico/cadastrar-disciplina">Cadastrar Disciplina</Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item className="nav-link" >
+                                <Link className="nav-link" to="/academico/cadastrar-professor">Cadastrar Professor</Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item className="nav-link" >
+                                <Link className="nav-link" to="/academico/cadastrar-aluno">Cadastrar Aluno</Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item className="nav-link" >
+                                <Link className="nav-link" to="/academico/cadastrar-sala">Cadastrar Sala</Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item className="nav-link" >
+                                <Link className="nav-link" to="/academico/cadastrar-semestre">Cadastrar Semestre</Link>
+                            </NavDropdown.Item>
+                           
+                        </NavDropdown>
                         
                         <Link className="nav-link" to="/ator">Ator detalhes</Link>
                         {/*<Link className="nav-link" to="/filmes/detalhes">Filmes Detalhes</Link>*/}
