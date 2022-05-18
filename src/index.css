@@ -47,3 +47,7 @@ img.hover-zoom {
 img.hover-zoom:hover {
   transform: scale(1.05);
 }
+
+.fundo{
+  background: url('https://lolstatic-a.akamaihd.net/frontpage/apps/prod/harbinger-l10-website/pt-br/production/pt-br/static/hero-0632cbf2872c5cc0dffa93d2ae8a29e8.webm');
+}

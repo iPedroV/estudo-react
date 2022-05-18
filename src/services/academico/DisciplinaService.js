@@ -19,7 +19,9 @@ class DisciplinaService {
     }
 
     delete(id){
-
+        const disciplinas = this.getAll()
+        disciplinas.splice(id, 1)
+        localStorage.setItem('disciplinas', JSON.stringify(disciplinas))
     }
 }
 
