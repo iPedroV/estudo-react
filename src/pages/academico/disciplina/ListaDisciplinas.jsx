@@ -5,56 +5,63 @@ import DisciplinaService from '../../../services/academico/DisciplinaService';
 import { FaPlus } from 'react-icons/fa'
 import { BsPencilFill, BsTrash } from 'react-icons/bs'
 import ReactPlayer from 'react-player/lazy'
+import Swal from 'sweetalert2'
 
 const ListaDisciplinas = () => {
 
     const [disciplinas, setDisciplinas] = useState([])
 
-    useEffect(() => {
+  useEffect(() => {
 
-        setDisciplinas(DisciplinaService.getAll())
+    setDisciplinas(DisciplinaService.getAll())
 
-    }, [])
+  }, [])
 
-    function apagar(id){
-        DisciplinaService.delete(id)
-        setDisciplinas(DisciplinaService.getAll())
+  function apagar(id) {
+    if(window.confirm('Deseja realmente excluir o registro?')){
+      DisciplinaService.delete(id)
+      setDisciplinas(DisciplinaService.getAll())
     }
+    Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
+  }
 
-    console.log(disciplinas);
+  return (
+    <div>
+      <h1>Disciplinas</h1>
 
-    return (
-        <div className="fundo">
-            <h1>Disciplinas</h1>
+      <Link className='btn btn-info mb-3' to={'/disciplinas/create'}><FaPlus /> Novo</Link>
 
-            <Link className='btn btn-info mb-3' to={'/academico/cadastrar-disciplina'}><FaPlus /> Novo</Link>
-            <ReactPlayer url='https://lolstatic-a.akamaihd.net/frontpage/apps/prod/harbinger-l10-website/pt-br/production/pt-br/static/hero-0632cbf2872c5cc0dffa93d2ae8a29e8.webm' muted={true} playing={true} loop={true} />
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Curso</th>
+          </tr>
+        </thead>
+        <tbody>
+          {disciplinas.map((item, i) => (
+            <tr key={i}>
+              <td>
+                <Link to={'/disciplinas/' + i}><BsPencilFill /></Link>{' '}
+                <BsTrash onClick={() => apagar(i)} className='text-danger' />
+              </td>
+              <td>{item.nome}</td>
+              <td>{item.curso}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
 
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Curso</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {disciplinas.map((item, i) => (
-                        <tr key={i}>
-                            <td>
-                                <div className="text-center d-flex space-between">
-                                <BsPencilFill/>
-                                <BsTrash/>
-                                </div>
-                            </td>
-                            <td>{item.nome}</td>
-                            <td>{item.curso}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
-        </div>
-    )
+
+
+    </div>
+  )
 }
 
 export default ListaDisciplinas
