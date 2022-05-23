@@ -23,11 +23,11 @@ const ListaDisciplinas = () => {
       setDisciplinas(DisciplinaService.getAll())
     }
     Swal.fire({
-        title: 'Error!',
-        text: 'Do you want to continue',
-        icon: 'error',
-        confirmButtonText: 'Cool'
-      })
+      title: 'Error!',
+      text: 'Do you want to continue',
+      icon: 'error',
+      confirmButtonText: 'Cool'
+    })
   }
 
   return (
