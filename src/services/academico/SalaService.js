@@ -5,7 +5,8 @@ class SalaService {
     }
 
     get(id){
-
+        const salas = this.getAll()
+        return salas[id]
     }
 
     create(dados){
@@ -15,11 +16,15 @@ class SalaService {
     }
 
     update(id, dados){
-
+        const salas = this.getAll()
+        salas.splice(id, 1, dados)
+        localStorage.setItem('salas', JSON.stringify(salas))
     }
 
     delete(id){
-
+        const salas = this.getAll()
+        salas.splice(id, 1)
+        localStorage.setItem('salas', JSON.stringify(salas))
     }
 }
 

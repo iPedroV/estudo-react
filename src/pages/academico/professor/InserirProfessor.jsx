@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa'
 import { BsArrowLeft } from 'react-icons/bs'
 import ProfessorService from '../../../services/academico/ProfessorService';
@@ -9,14 +9,20 @@ import professorValidator from '../../../validators/professorValidator';
 
 const InserirProfessor = () => {
 
+    const params = useParams()
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     function salvar(dados) {
-        ProfessorService.create(dados)
-        console.log(dados)
+
+        if (params.id) {
+            ProfessorService.update(params.id, dados)
+        } else {
+            ProfessorService.create(dados)
+            console.log(dados)
+        }
         navigate('/academico/professores')
-        // ok
+        //ok
     }
 
     return (

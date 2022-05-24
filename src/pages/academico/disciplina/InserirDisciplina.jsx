@@ -6,7 +6,6 @@ import { FaCheck } from 'react-icons/fa'
 import { BsArrowLeft } from 'react-icons/bs'
 import DisciplinaService from '../../../services/academico/DisciplinaService';
 import disciplinaValidator from '../../../validators/disciplinaValidator';
-
 import SalaService from '../../../services/academico/SalaService';
 
 const InserirDisciplina = () => {
@@ -17,13 +16,16 @@ const InserirDisciplina = () => {
     const salas = SalaService.getAll()
 
     function salvar(dados) {
-        DisciplinaService.create(dados)
-        console.log(dados)
-        navigate('/academico/disciplinas')
-        // ok
-    }
 
-    console.log(salas)
+        if (params.id) {
+            DisciplinaService.update(params.id, dados)
+        } else {
+            DisciplinaService.create(dados)
+            console.log(dados)
+        }
+        navigate('/academico/disciplinas')
+        //ok
+    }
 
 
     return (

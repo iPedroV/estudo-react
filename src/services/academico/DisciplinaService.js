@@ -5,7 +5,8 @@ class DisciplinaService {
     }
 
     get(id){
-
+        const disciplinas = this.getAll()
+        return disciplinas[id]
     }
 
     create(dados){
@@ -15,7 +16,9 @@ class DisciplinaService {
     }
 
     update(id, dados){
-
+        const disciplinas = this.getAll()
+        disciplinas.splice(id, 1, dados)
+        localStorage.setItem('disciplinas', JSON.stringify(disciplinas))
     }
 
     delete(id){

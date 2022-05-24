@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import { Table, Button } from 'react-bootstrap';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import SemestreService from '../../../services/academico/SemestreService';
+import CursoService from '../../../services/academico/CursoService';
 import { FaPlus } from 'react-icons/fa'
 import { BsPencilFill, BsTrash } from 'react-icons/bs'
 import Swal from 'sweetalert2'
 import { useForm } from 'react-hook-form';
 
-const ListaSemestre = () => {
+const ListaCursos = () => {
 
     const params = useParams()
     const navigate = useNavigate()
-    const [semestres, setSemestres] = useState([])
+    const [cursos, setCursos] = useState([])
     const { handleSubmit, setValue } = useForm();
+
 
     useEffect(() => {
 
         if (params.id) {
-            const curso = SemestreService.get(params.id)
+            const curso = CursoService.get(params.id)
 
             for (let campo in curso) {
                 setValue(campo, curso[campo])
             }
         }
-        setSemestres(SemestreService.getAll())
+        setCursos(CursoService.getAll())
 
     }, [])
 
@@ -39,8 +40,8 @@ const ListaSemestre = () => {
             confirmButtonText: 'Sim, exclua!'
         }).then((result) => {
             if (result.isConfirmed) {
-                SemestreService.delete(id)
-                setSemestres(SemestreService.getAll())
+                CursoService.delete(id)
+                setCursos(CursoService.getAll())
                 Swal.fire(
                     'Excluido!',
                     'Registro deletado.',
@@ -62,7 +63,7 @@ const ListaSemestre = () => {
             },
             willClose: () => {
                 clearInterval(timerInterval)
-                navigate('/academico/cadastrar-semestre')
+                navigate('/academico/cadastrar-curso')
             }
         }).then((result) => {
             if (result.dismiss === Swal.DismissReason.timer) {
@@ -73,7 +74,7 @@ const ListaSemestre = () => {
 
     return (
         <div>
-            <h1>Salas</h1>
+            <h1>Cursos</h1>
 
             <Button className='btn btn-info mb-3' onClick={handleSubmit(delay)}><FaPlus /> Novo</Button>
 
@@ -82,26 +83,28 @@ const ListaSemestre = () => {
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
-                        <th>Capacidade</th>
-                        <th>Tipo</th>
+                        <th>Duracao</th>
+                        <th>Modalidade</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {semestres.map((item, i) => (
+                    {cursos.map((item, i) => (
                         <tr key={i}>
                             <td>
                                 <Link to={'/cursos/' + i}><BsPencilFill /></Link>{' '}
                                 <BsTrash onClick={() => apagar(i)} className='text-danger' />
                             </td>
                             <td>{item.nome}</td>
-                            <td>{item.data_inicio}</td>
-                            <td>{item.data_fim}</td>
+                            <td>{item.duracao}</td>
+                            <td>{item.modalidade}</td>
                         </tr>
                     ))}
                 </tbody>
             </Table>
+
+
         </div>
     )
 }
 
-export default ListaSemestre
+export default ListaCursos

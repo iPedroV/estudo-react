@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa'
 import { BsArrowLeft } from 'react-icons/bs'
 import alunoValidator from '../../../validators/alunoValidator';
@@ -9,15 +9,20 @@ import AlunoService from '../../../services/academico/AlunoService';
 
 const InserirAluno = () => {
 
-
+    const params = useParams()
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     function salvar(dados) {
-        AlunoService.create(dados)
+
+        if (params.id) {
+            AlunoService.update(params.id, dados)
+          } else{
+            AlunoService.create(dados)
         console.log(dados)
+          }
         navigate('/academico/alunos')
-       // ok
+        //ok
     }
 
     return (

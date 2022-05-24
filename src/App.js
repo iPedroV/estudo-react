@@ -37,6 +37,7 @@ import ListaAlunos from './pages/academico/aluno/ListaAlunos';
 import ListaProfessores from './pages/academico/professor/ListaProfessores';
 import ListaSala from './pages/academico/sala/ListaSala';
 import ListaSemestre from './pages/academico/semestre/ListaSemestre';
+import ListaCursos from './pages/academico/curso/ListaCursos';
 
 
 
@@ -51,7 +52,7 @@ function App() {
         <Menu />
         <Container>
         <Routes>
-          <Route path="/" element={<RickEpisodes/>}></Route> {/* Posso fechar das duas formas */} 
+          <Route path="/" element={<InserirCurso/>}></Route> {/* Posso fechar das duas formas */} 
           <Route path="/personagens" element={<RickEpisodes/>}></Route> {/* Posso fechar das duas formas */} 
           <Route path="/carros" element={<Carros/>}></Route>
           <Route path="/array" element={<Array/>}></Route>
@@ -73,6 +74,7 @@ function App() {
           <Route path="/disney/personagens" element={<TodosPersonagens/>}></Route>
           <Route path="/disney/personagens/:_id" element={<PersonagemDetalhes/>}></Route>
           <Route path="/academico/cadastrar-curso" element={<InserirCurso/>}></Route>
+          <Route path="/academico/cursos" element={<ListaCursos/>}></Route>
           <Route path="/academico/cadastrar-disciplina" element={<InserirDisciplina/>}></Route>
           <Route path="/academico/disciplinas" element={<ListaDisciplinas/>}></Route>
           <Route path="/academico/cadastrar-professor" element={<InserirProfessor/>}></Route>

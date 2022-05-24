@@ -1,19 +1,25 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa'
 import { BsArrowLeft } from 'react-icons/bs'
 import CursoService from '../../../services/academico/CursoService'
 
 const InserirCurso = () => {
 
+    const params = useParams()
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm()
 
     function salvar(dados) {
-        CursoService.create(dados)
-        console.log(dados)
+
+        if (params.id) {
+            CursoService.update(params.id, dados)
+        } else {
+            CursoService.create(dados)
+            console.log(dados)
+        }
         navigate('/academico/cursos')
         //ok
     }

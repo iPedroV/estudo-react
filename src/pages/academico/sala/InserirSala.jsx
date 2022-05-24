@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button, Form } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Form, Button } from 'react-bootstrap'
+import { useForm } from 'react-hook-form'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { FaCheck } from 'react-icons/fa'
 import { BsArrowLeft } from 'react-icons/bs'
 import salaValidator from '../../../validators/salaValidator';
@@ -9,14 +9,20 @@ import SalaService from '../../../services/academico/SalaService';
 
 const InserirSala = () => {
 
+    const params = useParams()
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     function salvar(dados) {
-        SalaService.create(dados)
-        console.log(dados)
+
+        if (params.id) {
+            SalaService.update(params.id, dados)
+        } else {
+            SalaService.create(dados)
+            console.log(dados)
+        }
         navigate('/academico/salas')
-        // ok
+        //ok
     }
 
     return (
