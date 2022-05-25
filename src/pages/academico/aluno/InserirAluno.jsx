@@ -6,12 +6,13 @@ import { FaCheck } from 'react-icons/fa'
 import { BsArrowLeft } from 'react-icons/bs'
 import alunoValidator from '../../../validators/alunoValidator';
 import AlunoService from '../../../services/academico/AlunoService';
+import { mask } from 'remask';
 
 const InserirAluno = () => {
 
     const params = useParams()
     const navigate = useNavigate()
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, setValue, formState: { errors } } = useForm();
 
     function salvar(dados) {
 
@@ -23,6 +24,11 @@ const InserirAluno = () => {
           }
         navigate('/academico/alunos')
         //ok
+    }
+
+    function handleChange(event){
+        const mascara = event.target.getAttribute('mask')
+        setValue(event.target.name, mask(event.target.value, mascara))
     }
 
     return (
@@ -38,7 +44,9 @@ const InserirAluno = () => {
 
                 <Form.Group className="mb-3" controlId="cpf">
                     <Form.Label>CPF: </Form.Label>
-                    <Form.Control isInvalid={errors.cpf} type="number" {...register("cpf", alunoValidator.cpf)} />
+                    <Form.Control isInvalid={errors.cpf} type="text" {...register("cpf", alunoValidator.cpf)} 
+                    mask="999.999.999-99" onChange={handleChange} />
+                    
                     {errors.cpf && <span className="text-danger">Campo Obrigatório</span>}
                 </Form.Group>
 

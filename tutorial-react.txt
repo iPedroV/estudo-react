@@ -53,6 +53,8 @@ const [numero, setNumero] = useState(15)
     }, [])
     //o primeiro parâmetro é uma função anônima, dentro das chaves é o corpo da função. No array, é aonde eu vou botar variáveis, toda vez que eu mudar o valor delas, eu chamo a função
 
+//máscaras
+npm i remask
 
 
 na hora de colocar imagem ir em https://developers.themoviedb.org/3/getting-started/images

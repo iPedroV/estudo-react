@@ -14,7 +14,7 @@ const professorValidator = {
     cpf: {
         required: "O campo CPF é Obrigatório",
         minLength: {
-            value: 11,
+            value: 14,
             message: "Qtd mínima de caracteres não informado"
         },
         maxLength: {
